@@ -1,9 +1,17 @@
-body
+div
 {
-    margin-top: 30px;
+    margin-top: 300px;
 }
 div
 {
     text-align: center;
     font-size: 16pt;
+}
+li
+{
+    margin: 5px;
+}
+button
+{
+
 }
