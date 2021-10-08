@@ -1,14 +1,19 @@
-
 div
 {
     text-align: center;
     font-size: 16pt;
     margin-top: 0.5em;
+    
+}
+input
+{
+    vertical-align: middle;
 }
 li
 {
     margin: 5px;
 }
+
 h1
 {
     text-align: center;
