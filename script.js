@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   
-    const arrayFromStorage = JSONparse(window.localStorage.getItem('toDoArray'));
+    const arrayFromStorage = JSON.parse(window.localStorage.getItem('toDoArray'));
     console.log(arrayFromStorage);
 
     const btnAddToDo = window.document.getElementById("add-todo");
@@ -38,10 +38,10 @@ function addToDo() {
   
     list.appendChild(item);
     window.localStorage.setItem('toDoArray', JSON.stringify(list));
-
   }
   
   function removeToDo(event) {
     const list = document.getElementById("liste");
     list.removeChild(event.target);
+    window.localStorage.setItem('toDoArray', JSON.stringify(list));
   }
