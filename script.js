@@ -1,11 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
-
+  if(window.localStorage.getItem('toDoArray')!="") {
+    const arrayFromStorage = window.localStorage.getItem('toDoArray');
+  }
     const btnAddToDo = window.document.getElementById("add-todo");
     btnAddToDo.addEventListener("click", buttonPress);
   
     const input = document.getElementById("todoNote");
     input.addEventListener("keydown", handleKeyDown);
   });
+
 
 function buttonPress (event){
     addToDo();
@@ -17,11 +20,14 @@ function handleKeyDown(event) {
         addToDo();
     }
 }
-
+  
 function addToDo() {
 
     const list = document.getElementById("liste");
-
+    if(exists(arrayFetched)){
+      const arrayFetched = arrayFromStorage;
+    }
+    
     const input = document.getElementById("todoNote");
     const text = input.value;
     
