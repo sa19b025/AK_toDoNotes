@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   if(window.localStorage.getItem('toDoArray')!="") {
-    const arrayFromStorage = window.localStorage.getItem('toDoArray');
+    const arrayFromStorage = JSONparse(window.localStorage.getItem('toDoArray'));
   }
     const btnAddToDo = window.document.getElementById("add-todo");
     btnAddToDo.addEventListener("click", buttonPress);
@@ -24,7 +24,7 @@ function handleKeyDown(event) {
 function addToDo() {
 
     const list = document.getElementById("liste");
-    if(exists(arrayFetched)){
+    if(exists(arrayFromStorage)){
       const arrayFetched = arrayFromStorage;
     }
     
@@ -39,6 +39,8 @@ function addToDo() {
     input.focus();
   
     list.appendChild(item);
+    window.localStorage.setItem('toDoArray', JSON.stringify(list));
+
   }
   
   function removeToDo(event) {
